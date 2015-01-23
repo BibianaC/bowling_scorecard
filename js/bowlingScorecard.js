@@ -8,6 +8,7 @@ var Scorecard = function() {
 Scorecard.prototype.knocksPins = function(knocksBy) {
   this.pins -= knocksBy;
   this.score += knocksBy;
+  this.frames -= 1;
 
   if(knocksBy > 10){
     this.pins = this.pins - knocksBy

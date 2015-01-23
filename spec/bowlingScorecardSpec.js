@@ -55,6 +55,15 @@ describe("Scorecard", function() {
 
   });
 
+  describe("decrease frames", function() {
+
+    it("when pins are knocked", function() {
+      scorecard.knocksPins(1);
+      expect(scorecard.frames).toEqual(9);
+    });
+
+  });
+
 
 
 });
