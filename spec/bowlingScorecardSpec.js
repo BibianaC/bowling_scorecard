@@ -16,6 +16,10 @@ describe("Scorecard", function() {
       expect(scorecard.player).toEqual(1);
     });
 
+    it("has ten frames", function() {
+      expect(scorecard.frames).toEqual(10);
+    });
+
   });
 
 
