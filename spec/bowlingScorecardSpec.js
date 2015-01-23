@@ -12,6 +12,10 @@ describe("Scorecard", function() {
       expect(scorecard.score).toEqual(0);
     });
 
+    it("has one player", function() {
+      expect(scorecard.player).toEqual(1);
+    });
+
   });
 
 
