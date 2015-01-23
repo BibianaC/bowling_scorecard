@@ -40,5 +40,14 @@ describe("Scorecard", function() {
 
   });
 
+  describe("increase score", function() {
+
+    it("by the number of pins knocked", function() {
+      scorecard.knocksPins(1);
+      expect(scorecard.score).toEqual(1);
+    });
+
+  });
+
 
 });

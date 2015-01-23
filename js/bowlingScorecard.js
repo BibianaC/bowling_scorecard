@@ -7,9 +7,11 @@ var Scorecard = function() {
 
 Scorecard.prototype.knocksPins = function(knocksBy) {
   this.pins -= knocksBy;
+  this.score += knocksBy;
 
   if(knocksBy > 10){
     this.pins = this.pins - knocksBy
+    this.score = this.score - knocksBy
     return "You cannot knock more than 10 pins"
   }
 };
