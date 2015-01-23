@@ -64,6 +64,15 @@ describe("Scorecard", function() {
 
   });
 
+  describe("strike", function() {
+
+    it("knocks 10 pins", function() {
+      scorecard.strike();
+      expect(scorecard.pins).toEqual(0);
+    });
+
+  });
+
 
 
 });

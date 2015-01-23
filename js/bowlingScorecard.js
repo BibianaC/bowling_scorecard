@@ -20,3 +20,7 @@ Scorecard.prototype.knocksPins = function(knocksBy) {
 Scorecard.prototype.resetPins =  function() {
   this.pins = 10;
 };
+
+Scorecard.prototype.strike =function() {
+  this.pins = 0;
+};
