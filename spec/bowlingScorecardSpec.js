@@ -33,6 +33,11 @@ describe("Scorecard", function() {
       expect(scorecard.pins).toEqual(9);
     });
 
+    it("max 10", function() {
+      expect(scorecard.knocksPins(11)).toBe("You cannot knock more than 10 pins");
+      expect(scorecard.pins).toEqual(scorecard.pins)
+    });
+
   });
 
 
