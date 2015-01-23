@@ -20,6 +20,10 @@ describe("Scorecard", function() {
       expect(scorecard.frames).toEqual(10);
     });
 
+    it("has ten pins", function() {
+      expect(scorecard.pins).toEqual(10);
+    });
+
   });
 
 
