@@ -4,3 +4,7 @@ var Scorecard = function() {
   this.frames = 10;
   this.pins = 10;
 };
+
+Scorecard.prototype.knocksPins = function(knocksBy) {
+  this.pins -= knocksBy;
+};

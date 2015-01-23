@@ -26,5 +26,14 @@ describe("Scorecard", function() {
 
   });
 
+  describe("knocks down pins", function() {
+
+    it("can do it", function() {
+      scorecard.knocksPins(1);
+      expect(scorecard.pins).toEqual(9);
+    });
+
+  });
+
 
 });
