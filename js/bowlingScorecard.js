@@ -15,3 +15,7 @@ Scorecard.prototype.knocksPins = function(knocksBy) {
     return "You cannot knock more than 10 pins"
   }
 };
+
+Scorecard.prototype.resetPins =  function() {
+  this.pins = 10;
+};

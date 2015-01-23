@@ -38,6 +38,12 @@ describe("Scorecard", function() {
       expect(scorecard.pins).toEqual(scorecard.pins)
     });
 
+    it("pins can be reset to 10", function() {
+      scorecard.knocksPins(1);
+      scorecard.resetPins();
+      expect(scorecard.pins).toEqual(10);
+    });
+
   });
 
   describe("increase score", function() {
@@ -48,6 +54,7 @@ describe("Scorecard", function() {
     });
 
   });
+
 
 
 });
