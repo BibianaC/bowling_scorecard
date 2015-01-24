@@ -45,6 +45,13 @@ describe("Frame", function() {
       expect(frame.rolls).toEqual(1);
     });
 
+    it("can have max two rolls", function() {
+      frame.roll();
+      frame.roll();
+      expect(frame.roll()).toBe("You only have two rolls");
+      expect(frame.rolls).toEqual(0);
+    });
+
   });
 
 });

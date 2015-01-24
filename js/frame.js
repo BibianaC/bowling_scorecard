@@ -18,4 +18,10 @@ Frame.prototype.resetPins =  function() {
 
 Frame.prototype.roll = function() {
   this.rolls -= 1;
+
+  if(this.rolls < 0) {
+    this.rolls = 0;
+    return "You only have two rolls";
+  }
+
 };
