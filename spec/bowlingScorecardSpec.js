@@ -1,9 +1,11 @@
 describe("Scorecard", function() {
 
   var scorecard;
+  var frame;
 
   beforeEach(function() {
     scorecard = new Scorecard();
+    frame = new Frame();
   });
 
   describe("by default", function() {
@@ -16,62 +18,38 @@ describe("Scorecard", function() {
       expect(scorecard.player).toEqual(1);
     });
 
-    it("has ten frames", function() {
-      expect(scorecard.frames).toEqual(10);
-    });
-
-    it("has ten pins", function() {
-      expect(scorecard.pins).toEqual(10);
+    it("has an empty array of frames", function() {
+      expect(scorecard.frames.length).toEqual(0);
     });
 
   });
 
-  describe("knocks down pins", function() {
+  // describe("increase score", function() {
 
-    it("can do it", function() {
-      scorecard.knocksPins(1);
-      expect(scorecard.pins).toEqual(9);
-    });
+  //   it("by the number of pins knocked", function() {
+  //     frame.knocksPins(1);
+  //     expect(scorecard.score).toEqual(1);
+  //   });
 
-    it("max 10", function() {
-      expect(scorecard.knocksPins(11)).toBe("You cannot knock more than 10 pins");
-      expect(scorecard.pins).toEqual(scorecard.pins)
-    });
+  // });
 
-    it("pins can be reset to 10", function() {
-      scorecard.knocksPins(1);
-      scorecard.resetPins();
-      expect(scorecard.pins).toEqual(10);
-    });
+  // describe("decrease frames", function() {
 
-  });
+  //   it("when pins are knocked", function() {
+  //     frame.knocksPins(1);
+  //     expect(scorecard.frames).toEqual(9);
+  //   });
 
-  describe("increase score", function() {
+  // });
 
-    it("by the number of pins knocked", function() {
-      scorecard.knocksPins(1);
-      expect(scorecard.score).toEqual(1);
-    });
+  // describe("strike", function() {
 
-  });
+  //   it("knocks 10 pins", function() {
+  //     scorecard.strike();
+  //     expect(scorecard.pins).toEqual(0);
+  //   });
 
-  describe("decrease frames", function() {
-
-    it("when pins are knocked", function() {
-      scorecard.knocksPins(1);
-      expect(scorecard.frames).toEqual(9);
-    });
-
-  });
-
-  describe("strike", function() {
-
-    it("knocks 10 pins", function() {
-      scorecard.strike();
-      expect(scorecard.pins).toEqual(0);
-    });
-
-  });
+  // });
 
 
 
