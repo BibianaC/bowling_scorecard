@@ -4,8 +4,7 @@ var Scorecard = function() {
   this.frames = [];
 };
 
-
-
-// Scorecard.prototype.strike =function() {
-//   this.pins = 0;
-// };
+Scorecard.prototype.addFrame = function() {
+  frame = new Frame;
+  this.frames.push(frame);
+};
