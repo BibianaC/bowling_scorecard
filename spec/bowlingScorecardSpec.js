@@ -1,11 +1,9 @@
 describe("Scorecard", function() {
 
   var scorecard;
-  var frame;
 
   beforeEach(function() {
     scorecard = new Scorecard();
-    frame = new Frame();
   });
 
   describe("by default", function() {
@@ -33,6 +31,15 @@ describe("Scorecard", function() {
 
   });
 
+  describe("increase score", function() {
 
+    it("based on the score of each frame", function () {
+      scorecard.addFrame();
+      scorecard.frames[0].knocksPins(1);
+      scorecard.updateScore();
+      expect(scorecard.score).toEqual(1);
+    });
+
+  });
 
 });
