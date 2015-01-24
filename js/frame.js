@@ -4,14 +4,20 @@ var Frame = function() {
 };
 
 Frame.prototype.knocksPins = function(knocksBy) {
-  this.pins -= knocksBy;
-  this.roll();
-
-  if(this.pins < 0){
-    this.pins = this.pins + knocksBy;
-    this.rolls = this.rolls + 1;
+  
+  if(this.pins < knocksBy){
     return "You cannot knock more than 10 pins";
   }
+
+  else if(this.rolls === 0) {
+    return "You cannot knock down more pins";
+  }
+
+  else {
+    this.pins -= knocksBy;
+    this.roll();
+  }
+
 };
 
 Frame.prototype.resetPins =  function() {

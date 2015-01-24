@@ -27,7 +27,6 @@ describe("Frame", function() {
 
     it("max 10", function() {
       frame.knocksPins(2);
-      frame.roll();
       expect(frame.knocksPins(11)).toBe("You cannot knock more than 10 pins");
       expect(frame.pins).toEqual(8);
       expect(frame.rolls).toEqual(1);
@@ -37,6 +36,13 @@ describe("Frame", function() {
       frame.knocksPins(1);
       frame.resetPins();
       expect(frame.pins).toEqual(10);
+    });
+
+    it("cannot do it if rolls are 0", function() {
+      frame.knocksPins(1);
+      frame.knocksPins(2);
+      expect(frame.knocksPins(3)).toBe("You cannot knock down more pins");
+      expect(frame.pins).toEqual(7);
     });
 
   });
