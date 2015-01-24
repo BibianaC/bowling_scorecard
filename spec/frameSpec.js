@@ -58,6 +58,11 @@ describe("Frame", function() {
       expect(frame.rolls).toEqual(2);
     });
 
+    it("every time the player knocks down pins", function() {
+      frame.knocksPins(1);
+      expect(frame.rolls).toEqual(1);
+    });
+
   });
 
 });

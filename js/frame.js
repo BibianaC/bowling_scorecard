@@ -5,6 +5,7 @@ var Frame = function() {
 
 Frame.prototype.knocksPins = function(knocksBy) {
   this.pins -= knocksBy;
+  this.roll();
 
   if(knocksBy > 10){
     this.pins = this.pins - knocksBy;
