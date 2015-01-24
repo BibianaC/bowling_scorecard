@@ -24,8 +24,8 @@ describe("Scorecard", function() {
 
   describe("add frames", function() {
 
-    it("can do it", function() { 
-      scorecard.addFrame();
+    it("knows when to add a new frame", function() {
+      scorecard.nextFrame();
       expect(scorecard.frames.length).toEqual(1);
     });
 

@@ -5,12 +5,14 @@ var Scorecard = function() {
 };
 
 Scorecard.prototype.addFrame = function() {
-  frame = new Frame;
-  this.frames.push(frame);
 
-  if ( this.frames.length > 10) {
-    this.frames.pop(frame);
+  if ( this.frames.length >= 10) {
     return "Game is over"
+  }
+
+  else {
+    frame = new Frame;
+    this.frames.push(frame);
   }
 
 };
@@ -21,4 +23,15 @@ Scorecard.prototype.updateScore = function() {
     total += this.frames[i].calculateScore();
   }
   this.score = total;
+};
+
+Scorecard.prototype.nextFrame = function() {
+
+  if (this.frames.length === 0) {
+    this.addFrame();
+  }
+  else if (this.frames[this.frames.length-1].rolls === 0) {
+    this.addFrame();
+  }
+
 };
