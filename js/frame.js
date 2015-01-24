@@ -25,3 +25,7 @@ Frame.prototype.roll = function() {
   }
 
 };
+
+Frame.prototype.resetRolls = function() {
+  this.rolls = 2;
+};

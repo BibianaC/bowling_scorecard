@@ -52,6 +52,12 @@ describe("Frame", function() {
       expect(frame.rolls).toEqual(0);
     });
 
+    it("can be reset to 2", function() {
+      frame.roll();
+      frame.resetRolls();
+      expect(frame.rolls).toEqual(2);
+    });
+
   });
 
 });
