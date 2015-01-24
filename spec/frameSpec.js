@@ -12,8 +12,8 @@ describe("Frame", function() {
       expect(frame.pins).toEqual(10);
     });
 
-    it("has two trows", function() {
-      expect(frame.trows).toEqual(2);
+    it("has two rolls", function() {
+      expect(frame.rolls).toEqual(2);
     });
 
   });
@@ -34,6 +34,15 @@ describe("Frame", function() {
       frame.knocksPins(1);
       frame.resetPins();
       expect(frame.pins).toEqual(10);
+    });
+
+  });
+
+  describe("decrease rolls", function() {
+
+    it("can do it", function() { 
+      frame.roll();
+      expect(frame.rolls).toEqual(1);
     });
 
   });
