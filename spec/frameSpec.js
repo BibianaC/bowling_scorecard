@@ -74,4 +74,13 @@ describe("Frame", function() {
 
   });
 
+  describe("calculate score", function() {
+
+    it("based on number of knocked pins", function() {
+      frame.knocksPins(1);
+      expect(frame.calculateScore()).toEqual(1);
+    });
+
+  });
+
 });

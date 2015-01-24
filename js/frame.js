@@ -37,3 +37,8 @@ Frame.prototype.roll = function() {
 Frame.prototype.resetRolls = function() {
   this.rolls = 2;
 };
+
+Frame.prototype.calculateScore = function() {
+  initial_pins = 10;
+  return initial_pins - this.pins;
+};
