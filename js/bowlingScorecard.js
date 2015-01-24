@@ -7,6 +7,12 @@ var Scorecard = function() {
 Scorecard.prototype.addFrame = function() {
   frame = new Frame;
   this.frames.push(frame);
+
+  if ( this.frames.length > 10) {
+    this.frames.pop(frame);
+    return "Game is over"
+  }
+
 };
 
 Scorecard.prototype.updateScore = function() {

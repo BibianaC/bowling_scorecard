@@ -29,6 +29,21 @@ describe("Scorecard", function() {
       expect(scorecard.frames.length).toEqual(1);
     });
 
+    it("can have max 10 frames", function() {
+      scorecard.addFrame();
+      scorecard.addFrame();
+      scorecard.addFrame();
+      scorecard.addFrame();
+      scorecard.addFrame();
+      scorecard.addFrame();
+      scorecard.addFrame();
+      scorecard.addFrame();
+      scorecard.addFrame();
+      scorecard.addFrame();
+      expect(scorecard.addFrame()).toBe("Game is over");
+      expect(scorecard.frames.length).toEqual(10);
+    });
+
   });
 
   describe("increase score", function() {
