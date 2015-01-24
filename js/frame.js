@@ -7,8 +7,9 @@ Frame.prototype.knocksPins = function(knocksBy) {
   this.pins -= knocksBy;
   this.roll();
 
-  if(knocksBy > 10){
-    this.pins = this.pins - knocksBy;
+  if(this.pins < 0){
+    this.pins = this.pins + knocksBy;
+    this.rolls = this.rolls + 1;
     return "You cannot knock more than 10 pins";
   }
 };

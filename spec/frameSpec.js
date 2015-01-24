@@ -26,8 +26,11 @@ describe("Frame", function() {
     });
 
     it("max 10", function() {
+      frame.knocksPins(2);
+      frame.roll();
       expect(frame.knocksPins(11)).toBe("You cannot knock more than 10 pins");
-      expect(frame.pins).toEqual(frame.pins)
+      expect(frame.pins).toEqual(8);
+      expect(frame.rolls).toEqual(1);
     });
 
     it("pins can be reset to 10", function() {
