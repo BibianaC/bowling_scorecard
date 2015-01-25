@@ -29,7 +29,7 @@ describe("Scorecard", function() {
       expect(scorecard.frames.length).toEqual(1);
     });
 
-    it("should not add a new frame if rolls are not over", function() {
+    it("should not add a new frame if frame is not over", function() {
       scorecard.nextFrame();
       scorecard.nextFrame();
       scorecard.frames[0].roll();
