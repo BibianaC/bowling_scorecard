@@ -1,2 +1,28 @@
 @import url('reset.css');
 
+.table {
+  text-align: center;
+  border: 3px solid black;
+  font-size: 5em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+}
+
+.table .row-header {
+  background-color: #20B2AA;
+  color: white;
+  border: 2px solid black;
+  font-weight: bold;
+}
+
+.pins {
+  text-align: center;
+  margin-top: 2em;
+  font-size: 3em;
+}
+
+.pins .number {
+  font-size: 0.5em;
+  text-align: center;;
+}
