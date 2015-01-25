@@ -31,18 +31,24 @@ Scorecard.prototype.updateScore = function() {
   
   total = 0;
   for (i = 0; i < this.frames.length; i++) {
-    if (this.frames[i].isSpare()) {
-      total += this.calcBonusSpare(i);
-    }
-    else if (this.frames[i].isStrike()) {
-      total += this.calcBonusStrike(i);
-    }
-    else {  
-      total += this.frames[i].calculateScore();
-    }
+    total += this.calcFrameScore(i);
   }
   this.score = total;
 };
+
+Scorecard.prototype.calcFrameScore = function(number) {
+  frame = this.frames[number];
+  if (frame.isSpare()) {
+    return this.calcBonusSpare(i);
+  }
+  else if (frame.isStrike()) {
+    return this.calcBonusStrike(i);
+  }
+  else {  
+    return frame.calculateScore();
+  }
+};
+  
 
 Scorecard.prototype.calcBonusSpare = function(number) {
   if (number > this.frames.length-1) {
