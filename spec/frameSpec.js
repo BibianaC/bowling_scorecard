@@ -32,12 +32,6 @@ describe("Frame", function() {
       expect(frame.rolls).toEqual(1);
     });
 
-    it("pins can be reset to 10", function() {
-      frame.knocksPins(1);
-      frame.resetPins();
-      expect(frame.pins).toEqual(10);
-    });
-
     it("cannot do it if rolls are 0", function() {
       frame.knocksPins(1);
       frame.knocksPins(2);
@@ -59,12 +53,6 @@ describe("Frame", function() {
       frame.roll();
       expect(frame.roll()).toBe("You only have two rolls");
       expect(frame.rolls).toEqual(0);
-    });
-
-    it("can be reset to 2", function() {
-      frame.roll();
-      frame.resetRolls();
-      expect(frame.rolls).toEqual(2);
     });
 
     it("every time the player knocks down pins", function() {
