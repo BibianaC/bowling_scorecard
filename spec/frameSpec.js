@@ -119,4 +119,24 @@ describe("Frame", function() {
 
   });
 
+  describe("is finish", function() {
+
+    it("when rolls is 0", function() {
+      frame.knocksPins(2);
+      frame.knocksPins(1);
+      expect(frame.isFinish()).toBe(true);
+    });
+
+    it("when player makes a strike", function() {
+      frame.knocksPins(10);
+      expect(frame.isFinish()).toBe(true);
+    });
+
+    it("it is not finish", function() {
+      frame.knocksPins(1);
+      expect(frame.isFinish()).toBe(false);
+    });
+
+  });
+
 });

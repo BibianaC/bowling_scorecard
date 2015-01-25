@@ -50,3 +50,7 @@ Frame.prototype.isSpare = function() {
 Frame.prototype.isStrike = function() {
   return((this.pins === 0) && (this.rolls === 1));
 };
+
+Frame.prototype.isFinish = function() {
+  return((this.rolls === 0) || (this.pins === 0));
+};
