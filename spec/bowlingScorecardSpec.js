@@ -62,6 +62,17 @@ describe("Scorecard", function() {
       expect(scorecard.score).toEqual(1);
     });
 
+    it("adds spare bonus if spare", function() {
+      scorecard.addFrame();
+      scorecard.frames[0].knocksPins(1);
+      scorecard.frames[0].knocksPins(9);
+      scorecard.addFrame();
+      scorecard.frames[1].knocksPins(1);
+      scorecard.frames[1].knocksPins(2);
+      scorecard.updateScore();
+      expect(scorecard.score).toEqual(16);
+    });
+
   });
 
   describe("bonus", function() {

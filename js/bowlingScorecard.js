@@ -17,14 +17,6 @@ Scorecard.prototype.addFrame = function() {
 
 };
 
-Scorecard.prototype.updateScore = function() {
-  total = 0;
-  for (i = 0; i < this.frames.length; i++) {
-    total += this.frames[i].calculateScore();
-  }
-  this.score = total;
-};
-
 Scorecard.prototype.nextFrame = function() {
 
   if (this.frames.length === 0) {
@@ -32,6 +24,31 @@ Scorecard.prototype.nextFrame = function() {
   }
   else if (this.frames[this.frames.length-1].isFinish() === true) {
     this.addFrame();
+  }
+};
+
+Scorecard.prototype.updateScore = function() {
+
+  total = 0;
+  for (i = 0; i < this.frames.length; i++) {
+    if (this.frames[i].isSpare()) {
+      total += this.calcBonusSpare(i);
+    }
+    else {  
+      total += this.frames[i].calculateScore();
+    }
+  }
+
+  this.score = total;
+
+};
+
+Scorecard.prototype.calcBonusSpare = function(number) {
+  if (number > this.frames.length-1) {
+    return "not valid";
+  } 
+  else {
+    return this.frames[number].calculateScore() + this.frames[number+1].calculateScore();
   }
 };
 
