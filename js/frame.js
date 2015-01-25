@@ -46,3 +46,7 @@ Frame.prototype.calculateScore = function() {
 Frame.prototype.isSpare = function() {
   return((this.pins === 0) && (this.rolls === 0));
 };
+
+Frame.prototype.isStrike = function() {
+  return((this.pins === 0) && (this.rolls === 1));
+};
