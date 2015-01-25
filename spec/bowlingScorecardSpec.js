@@ -73,6 +73,12 @@ describe("Scorecard", function() {
       expect(scorecard.isBonusSpare()).toBe(true);
     });
 
+    it("when player makes a strike", function() {
+      scorecard.addFrame();
+      scorecard.frames[0].knocksPins(10);
+      expect(scorecard.isBonusStrike()).toBe(true);
+    });
+
   });
 
 });

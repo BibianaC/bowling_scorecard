@@ -37,4 +37,8 @@ Scorecard.prototype.nextFrame = function() {
 
 Scorecard.prototype.isBonusSpare = function() {
   return this.frames[this.frames.length-1].isSpare() === true;
-}
+};
+
+Scorecard.prototype.isBonusStrike = function() {
+  return this.frames[this.frames.length-1].isStrike() === true;
+};
