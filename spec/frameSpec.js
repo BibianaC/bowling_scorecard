@@ -83,4 +83,25 @@ describe("Frame", function() {
 
   });
 
+  describe("spare", function() {
+
+    it("knows when is a spare", function() {
+      frame.knocksPins(7);
+      frame.knocksPins(3);
+      expect(frame.isSpare()).toBe(true);
+    });
+
+    it("knows when it is not a spare", function() {
+      frame.knocksPins(7);
+      frame.knocksPins(2);
+      expect(frame.isSpare()).toBe(false);
+    });
+
+    it("knows that a strike is not a spare", function() {
+      frame.knocksPins(10);
+      expect(frame.isSpare()).toBe(false);
+    });
+
+  });
+
 });

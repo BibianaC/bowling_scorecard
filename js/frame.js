@@ -42,3 +42,7 @@ Frame.prototype.calculateScore = function() {
   initial_pins = 10;
   return initial_pins - this.pins;
 };
+
+Frame.prototype.isSpare = function() {
+  return((this.pins === 0) && (this.rolls === 0));
+};
