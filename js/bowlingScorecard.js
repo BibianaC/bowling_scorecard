@@ -28,19 +28,20 @@ Scorecard.prototype.nextFrame = function() {
 };
 
 Scorecard.prototype.updateScore = function() {
-
+  
   total = 0;
   for (i = 0; i < this.frames.length; i++) {
     if (this.frames[i].isSpare()) {
       total += this.calcBonusSpare(i);
     }
+    else if (this.frames[i].isStrike()) {
+      total += this.calcBonusStrike(i);
+    }
     else {  
       total += this.frames[i].calculateScore();
     }
   }
-
   this.score = total;
-
 };
 
 Scorecard.prototype.calcBonusSpare = function(number) {
@@ -49,6 +50,15 @@ Scorecard.prototype.calcBonusSpare = function(number) {
   } 
   else {
     return this.frames[number].calculateScore() + this.frames[number+1].calculateScore();
+  }
+};
+
+Scorecard.prototype.calcBonusStrike = function(number) {
+  if (number > this.frames.length-1) {
+    return "not valid";
+  } 
+  else {
+    return this.frames[number].calculateScore() + this.frames[number+1].calculateScore() + this.frames[number+2].calculateScore();
   }
 };
 
