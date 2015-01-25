@@ -64,4 +64,15 @@ describe("Scorecard", function() {
 
   });
 
+  describe("bonus", function() {
+
+    it("when player makes a spare", function() {
+      scorecard.addFrame();
+      scorecard.frames[0].knocksPins(1);
+      scorecard.frames[0].knocksPins(9);
+      expect(scorecard.isBonusSpare()).toBe(true);
+    });
+
+  });
+
 });

@@ -30,8 +30,11 @@ Scorecard.prototype.nextFrame = function() {
   if (this.frames.length === 0) {
     this.addFrame();
   }
-  else if (this.frames[this.frames.length-1].isFinish === true) {
+  else if (this.frames[this.frames.length-1].isFinish() === true) {
     this.addFrame();
   }
-
 };
+
+Scorecard.prototype.isBonusSpare = function() {
+  return this.frames[this.frames.length-1].isSpare() === true;
+}
