@@ -34,6 +34,7 @@ Scorecard.prototype.updateScore = function() {
     total += this.calcFrameScore(i);
   }
   this.score = total;
+  return this.score;
 };
 
 Scorecard.prototype.calcFrameScore = function(number) {
@@ -74,4 +75,8 @@ Scorecard.prototype.isBonusSpare = function() {
 
 Scorecard.prototype.isBonusStrike = function() {
   return this.frames[this.frames.length-1].isStrike() === true;
+};
+
+Scorecard.prototype.latestFrame = function() {
+  return this.frames[this.frames.length-1];
 };
