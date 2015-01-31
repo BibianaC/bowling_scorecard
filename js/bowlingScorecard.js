@@ -53,7 +53,7 @@ Scorecard.prototype.calcFrameScore = function(number) {
 
 Scorecard.prototype.calcBonusSpare = function(number) {
   if (number > this.frames.length-1) {
-    return "not valid " + number + " " + this.frames.length;
+    return "not valid ";
   } 
   else {
     sum = this.frames[number].calculateScore();
