@@ -39,6 +39,13 @@ describe("Frame", function() {
       expect(frame.pins).toEqual(7);
     });
 
+    it("should know how many pins has knocked down", function() {
+      frame.knocksPins(1);
+      expect(frame.knockedPins(0)).toEqual(1);
+      frame.knocksPins(2);
+      expect(frame.knockedPins(1)).toEqual(2);
+    });
+
   });
 
   describe("decrease rolls", function() {

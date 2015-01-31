@@ -1,6 +1,7 @@
 var Frame = function() {
   this.pins = 10; // Standing pins.
   this.rolls = 2; // Rolls left.
+  this.pinsPerRoll = []; // Pins knocked down in every roll.
 };
 
 Frame.prototype.knocksPins = function(knocksBy) {
@@ -14,7 +15,12 @@ Frame.prototype.knocksPins = function(knocksBy) {
   else {
     this.pins -= knocksBy;
     this.roll();
+    this.pinsPerRoll.push(knocksBy);
   }
+};
+
+Frame.prototype.knockedPins = function(rollNum) {
+  return this.pinsPerRoll[rollNum];
 };
 
 Frame.prototype.roll = function() {
