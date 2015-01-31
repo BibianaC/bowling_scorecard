@@ -40,10 +40,10 @@ Scorecard.prototype.updateScore = function() {
 Scorecard.prototype.calcFrameScore = function(number) {
   frame = this.frames[number];
   if (frame.isSpare()) {
-    return this.calcBonusSpare(i);
+    return this.calcBonusSpare(number);
   }
   else if (frame.isStrike()) {
-    return this.calcBonusStrike(i);
+    return this.calcBonusStrike(number);
   }
   else {  
     return frame.calculateScore();
@@ -53,7 +53,7 @@ Scorecard.prototype.calcFrameScore = function(number) {
 
 Scorecard.prototype.calcBonusSpare = function(number) {
   if (number > this.frames.length-1) {
-    return "not valid";
+    return "not valid " + number + " " + this.frames.length;
   } 
   else {
     sum = this.frames[number].calculateScore();
