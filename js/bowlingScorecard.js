@@ -56,7 +56,11 @@ Scorecard.prototype.calcBonusSpare = function(number) {
     return "not valid";
   } 
   else {
-    return this.frames[number].calculateScore() + this.frames[number+1].calculateScore();
+    sum = this.frames[number].calculateScore();
+    if (this.frames[number+1] !== undefined) {
+      sum += this.frames[number+1].calculateScore();
+    }
+    return sum;
   }
 };
 
@@ -65,7 +69,14 @@ Scorecard.prototype.calcBonusStrike = function(number) {
     return "not valid";
   } 
   else {
-    return this.frames[number].calculateScore() + this.frames[number+1].calculateScore() + this.frames[number+2].calculateScore();
+    sum = this.frames[number].calculateScore();
+    if (this.frames[number+1] !== undefined) {
+      sum += this.frames[number+1].calculateScore();
+      if (this.frames[number+2] !== undefined) {
+        sum += this.frames[number+2].calculateScore();
+      }
+    }
+    return sum;
   }
 };
 
