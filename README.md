@@ -3,7 +3,7 @@
 ## Screenshot
 
 <div align="center">
-        <img width="45%" src="images/Front.png">
+        <img width="80%" src="images/Front.png">
 </div>
 
 ### Count and sum the scores of a bowling game of one player (in Javascript).
