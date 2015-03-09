@@ -3,7 +3,7 @@
 ## Screenshot
 
 <div align="center">
-        <img width="80%" src="images/Front.png">
+  <img width="80%" src="images/Front.png">
 </div>
 
 ### Count and sum the scores of a bowling game of one player (in Javascript).
@@ -18,7 +18,7 @@ The player has a strike if she knocks down all 10 pins with the first roll in a 
 
 The player has a spare if she knocks down all 10 pins with the two roles of a frame. The bonus for that frame is the number of pins knocked down by the next roll (first role of next frame).
 
-#### 10th frame
+#### 10th frame (To-Do)
 
 If the player rolls a strike or spare in the 10th frame she can roll the additional balls for the bonus. But she can never roll more than 3 balls in the 10th frame. The additional rolls only count for the bonus- not for the regular frame count.
 
