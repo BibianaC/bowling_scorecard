@@ -1,5 +1,3 @@
-[![Code Climate](https://codeclimate.com/github/BibianaC/bowling_scorecard/badges/gpa.svg)](https://codeclimate.com/github/BibianaC/bowling_scorecard)
-
 # Bowling Scorecard Challenge :bowling:
 
 ## Screenshot
